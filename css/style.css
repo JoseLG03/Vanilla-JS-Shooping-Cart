@@ -523,14 +523,24 @@ ol {
   display: block;
   position: absolute;
   right:0;
-
   top:100%;
   z-index: 1;
-  background-color: white;
+  background-color:rgba(254, 216, 177, 0.8) ;
   padding: 20px;
   min-height: 400px;
   min-width: 300px;
 }
+
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
 
 .erase {
   background-color: red;

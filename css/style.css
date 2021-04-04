@@ -1187,6 +1187,21 @@ ol {
   margin-right: 0;
 }
 
+.footer__payments {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.footer__payments h6 {
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.footer__payments img {
+  margin-left: 7%;
+
+}
 .footer__newslatter {
   padding-left: 50px;
   margin-bottom: 30px;

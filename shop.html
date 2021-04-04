@@ -53,21 +53,6 @@
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__option">
-            <ul>
-                <li>USD <span class="arrow_carrot-down"></span>
-                    <ul>
-                        <li>EUR</li>
-                        <li>USD</li>
-                    </ul>
-                </li>
-                <li>ENG <span class="arrow_carrot-down"></span>
-                    <ul>
-                        <li>Spanish</li>
-                        <li>ENG</li>
-                    </ul>
-                </li>
-                <li><a href="#">Sign in</a> <span class="arrow_carrot-down"></span></li>
-            </ul>
         </div>
     </div>
     <!-- Offcanvas Menu End -->
@@ -85,11 +70,29 @@
                                 <a href="./index.html"><img src="img/logo.png" alt=""></a>
                             </div>
                             <div class="header__top__right">
-                                <div class="header__top__right__links">
-                                </div>
                                 <div class="header__top__right__cart">
-                                    <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                                    <div class="cart__price">Cart: <span>$0.00</span></div>
+                                        <ul>
+                                            <li class="submenu">
+                                                <img src="img/icon/cart.png" alt="">
+                                                <div class="cart__price">Cart: <span>$0.00</span></div>
+                                                    <div id="carrito">
+                                                            <table id="lista-carrito" class="u-full-width">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Image</th>
+                                                                        <th>Name</th>
+                                                                        <th>Price</th>
+                                                                        <th>Pzas</th>
+                                                                        <th></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody></tbody>
+                                                            </table>
+                                                            <a href="#" id="empty_cart" class="button">Empty Cart</a>
+                                                    </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +109,6 @@
                             <li><a href="./index.html">Home</a></li>
                             <li><a href="./about.html">About</a></li>
                             <li class="active"><a href="./shop.html">Shop</a></li>
-                            <li><a href="./blog.html">Blog</a></li>
                             <li><a href="./contact.html">Contact</a></li>
                         </ul>
                     </nav>

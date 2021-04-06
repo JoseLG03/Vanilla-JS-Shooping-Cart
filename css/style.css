@@ -517,10 +517,10 @@ ol {
   list-style-type: none;
 }
 
-.submenu #carrito{
+.submenu #divCart{
   display: none;
 }
-.submenu:hover #carrito{
+.submenu:hover #divCart{
   display: block;
   position: absolute;
   right:0;

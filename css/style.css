@@ -526,7 +526,8 @@ ol {
   right:0;
   top:100%;
   z-index: 1;
-  background-color:rgba(254, 216, 177, 0.8) ;
+  /*background-color:rgba(254, 216, 177, 0.8) ;*/
+  background-color:rgba(255, 255, 255, 0.8) ;
   padding: 20px;
   min-height: 300px;
   min-width: 300px;
@@ -546,7 +547,7 @@ ol {
 .u-pull-left {
   float: left; }
 
-.thead{
+.tr{
   border-bottom:1px solid #aaa;
   margin-top: 15%;
 }  
@@ -1890,7 +1891,7 @@ input[type="button"].button-primary:focus {
   text-transform: uppercase;
   padding-bottom: 25px;
 }
-.shopping__cart__table table tbody tr {
+.shopping__cart__table_tr {
   border-bottom: 1px solid #f2f2f2;
 }
 .shopping__cart__table table tbody tr td {

@@ -12,12 +12,6 @@ const btnEmptyCart = document.querySelector("#emptyCart");
 
 let shoppingCart = [];
 
-//console.log(cart);
-//console.log(cartPrice);
-//console.log(btnEmptyCart);
-//console.log(listCart);
-//console.log(tBody);
-
 //Load listeners
 
     loadEventsListeners();
@@ -45,7 +39,6 @@ let shoppingCart = [];
     };
 
     function readInfoCake(e){
-        console.log(e);
         let infoCake ={
             img: e.querySelector('div').getAttribute('data-setbg'),
             name: e.querySelector('.product__item__text h6 a').textContent,
@@ -53,5 +46,24 @@ let shoppingCart = [];
             id: e.querySelector('.add').getAttribute('data-id'),
             count: 1
         }
-        console.log(infoCake);
+
+        shoppingCart = [...shoppingCart,infoCake];
+        
+        cartHTML();
     };
+
+    function cartHTML(){
+
+        shoppingCart.forEach(e => {
+            const row = document.createElement('tr');
+            row.classList.add(".tr"); 
+            row.innerHTML=`
+                <td>
+                    ${e.name}
+                </td>
+            `;
+            
+            tBody.appendChild(row);
+        });
+    
+    }

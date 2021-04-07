@@ -55,8 +55,9 @@ let shoppingCart = [];
     function cartHTML(){
 
         shoppingCart.forEach(e => {
-            const row = document.createElement('tr');
-            row.classList.add(".tr"); 
+            let row = document.createElement('tr');
+            row.classList.add(".shopping__cart__table_table_thead_tr_th"); 
+            console.log(row);
             row.innerHTML=`
                 <td>
                     ${e.name}

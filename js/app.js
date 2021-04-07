@@ -47,10 +47,10 @@ let shoppingCart = [];
     function readInfoCake(e){
         console.log(e);
         let infoCake ={
-            //img: e.querySelector('img').src,
-            //name: e.querySelector('h6 a').textContent,
-            //price: e.querySelector('product__item__price').textContent,
-            id: e.querySelector('a').getAttribute('data-id'),
+            img: e.querySelector('div').getAttribute('data-setbg'),
+            name: e.querySelector('.product__item__text h6 a').textContent,
+            price: e.querySelector('.product__item__price').textContent,
+            id: e.querySelector('.add').getAttribute('data-id'),
             count: 1
         }
         console.log(infoCake);

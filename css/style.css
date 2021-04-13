@@ -1879,25 +1879,15 @@ input[type="button"].button-primary:focus {
 .shopping__cart__table table {
   width: 100%;
 }
-.shopping__cart__table table tr {
-  border-bottom: 1px solid #f2f2f2;
-  background-color: chartreuse;
-}
-.shopping__cart__table table thead tr th {
+.shopping__cart__table table thead{
   color: #111111;
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
   padding-bottom: 25px;
 }
-.shopping__cart__table_table_thead_tr_th {
-  color: #111111;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding-bottom: 25px;
-}
-.shopping__cart__table_tr {
+
+.shopping__cart__table table tr{
   border-bottom: 1px solid #f2f2f2;
 }
 .shopping__cart__table table tbody tr td {

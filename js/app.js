@@ -56,10 +56,10 @@ let shoppingCart = [];
 
         shoppingCart.forEach(e => {
             let row = document.createElement('tr');
-            row.classList.add(".shopping__cart__table_table_thead_tr_th"); 
+            //row.classList.add(""); 
             console.log(row);
             row.innerHTML=`
-                <td>
+                <td class=".shopping__cart__table table thead">
                     ${e.name}
                 </td>
             `;

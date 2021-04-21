@@ -54,6 +54,8 @@ let shoppingCart = [];
 
     function cartHTML(){
 
+        cleanHTML();
+
         shoppingCart.forEach(e => {
             let row = document.createElement('tr');
             //row.classList.add(""); 
@@ -67,4 +69,8 @@ let shoppingCart = [];
             tBody.appendChild(row);
         });
     
+    }
+
+    function cleanHTML(){
+        tBody.innerHTML="";
     }

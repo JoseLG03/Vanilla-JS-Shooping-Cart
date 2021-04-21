@@ -62,7 +62,16 @@ let shoppingCart = [];
             console.log(row);
             row.innerHTML=`
                 <td class=".shopping__cart__table table thead">
+                    <img src="${e.img}" />
+                </td>
+                <td class=".shopping__cart__table table thead">
                     ${e.name}
+                </td>
+                <td class=".shopping__cart__table table thead">
+                    ${e.price}
+                </td>
+                <td class=".shopping__cart__table table thead">
+                    ${e.count}
                 </td>
             `;
             
@@ -72,5 +81,7 @@ let shoppingCart = [];
     }
 
     function cleanHTML(){
-        tBody.innerHTML="";
+        while(tBody.firstChild){
+            tBody.removeChild(tBody.firstChild);
+        }
     }

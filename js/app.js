@@ -73,6 +73,9 @@ let shoppingCart = [];
                 <td class=".shopping__cart__table table thead">
                     ${e.count}
                 </td>
+                <td class=".shopping__cart__table table thead">
+                    <a href="#" class="borrar-curso" data-id="${e.id}"> X </a>
+                </td>
             `;
             
             tBody.appendChild(row);

@@ -57,24 +57,24 @@ let shoppingCart = [];
         cleanHTML();
 
         shoppingCart.forEach(e => {
+            const{img, name, price, count,id} =  e;
             let row = document.createElement('tr');
-            //row.classList.add(""); 
-            console.log(row);
+             
             row.innerHTML=`
                 <td class=".shopping__cart__table table thead">
-                    <img src="${e.img}" />
+                    <img src="${img}" />
                 </td>
                 <td class=".shopping__cart__table table thead">
-                    ${e.name}
+                    ${name}
                 </td>
                 <td class=".shopping__cart__table table thead">
-                    ${e.price}
+                    ${price}
                 </td>
                 <td class=".shopping__cart__table table thead">
-                    ${e.count}
+                    ${count}
                 </td>
                 <td class=".shopping__cart__table table thead">
-                    <a href="#" class="borrar-curso" data-id="${e.id}"> X </a>
+                    <a href="#" class="borrar-curso" data-id="${id}"> X </a>
                 </td>
             `;
             

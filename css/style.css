@@ -1956,6 +1956,15 @@ input[type="button"].button-primary:focus {
   text-align: center;
 }
 
+.borrar-curso {
+  background-color: red;
+  border-radius: 50%;
+  padding: 0.5px 4px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
 .continue__btn.update__btn {
   text-align: right;
 }

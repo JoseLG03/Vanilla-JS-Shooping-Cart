@@ -14,14 +14,14 @@ let shoppingCart = [];
 
 //Load listeners
 
-    loadEventsListeners();
-
     function loadEventsListeners(){
  
         listCupcake.addEventListener("click", addToCart);
 
-        btnEmptyCart.addEventListener("click", emptyCart);
+        cart.addEventListener("click", eraseCupcake);
     };
+
+    loadEventsListeners();
 
     function addToCart(e){
 
@@ -38,6 +38,17 @@ let shoppingCart = [];
         console.log("Vaciar el carrito");
     };
 
+    function eraseCupcake(e){
+        
+        if(e.target.classList.contains("eraseCupcake")){
+            const idCupcake = e.target.getAttribute("data-id");
+
+            shoppingCart = shoppingCart.filter( e => e.id !== idCupcake);
+
+            cartHTML();
+        }
+    }
+
     function readInfoCake(e){
         let infoCake ={
             img: e.querySelector('div').getAttribute('data-setbg'),
@@ -47,7 +58,21 @@ let shoppingCart = [];
             count: 1
         }
 
-        shoppingCart = [...shoppingCart,infoCake];
+        const exist = shoppingCart.some( e => e.id=== infoCake.id);
+
+        if(exist){
+            const cupcake = shoppingCart.map( e =>{
+                if(e.id=== infoCake.id){
+                    e.count++;
+                    return e;
+                }else{
+                    return e;
+                }
+            })
+            shoppingCart = [...cupcake];
+        }else{
+            shoppingCart = [...shoppingCart,infoCake];
+        }
         
         cartHTML();
     };
@@ -74,7 +99,7 @@ let shoppingCart = [];
                     ${count}
                 </td>
                 <td class=".shopping__cart__table table thead">
-                    <a href="#" class="borrar-curso" data-id="${id}"> X </a>
+                    <a href="#" class="eraseCupcake" data-id="${id}"> X </a>
                 </td>
             `;
             
@@ -88,3 +113,4 @@ let shoppingCart = [];
             tBody.removeChild(tBody.firstChild);
         }
     }
+    

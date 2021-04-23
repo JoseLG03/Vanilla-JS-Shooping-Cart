@@ -19,6 +19,8 @@ let shoppingCart = [];
         listCupcake.addEventListener("click", addToCart);
 
         cart.addEventListener("click", eraseCupcake);
+
+        btnEmptyCart.addEventListener("click", emptyCart);
     };
 
     loadEventsListeners();
@@ -35,7 +37,8 @@ let shoppingCart = [];
     };
 
     function emptyCart(){
-        console.log("Vaciar el carrito");
+        shoppingCart = [];
+        cartHTML();
     };
 
     function eraseCupcake(e){
@@ -45,7 +48,7 @@ let shoppingCart = [];
 
             shoppingCart = shoppingCart.filter( e => e.id !== idCupcake);
 
-            cartHTML();
+            cleanHTML();
         }
     }
 

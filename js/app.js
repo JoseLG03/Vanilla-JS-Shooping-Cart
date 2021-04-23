@@ -60,13 +60,13 @@ let shoppingCart = [];
             name: e.querySelector('.product__item__text h6 a').textContent,
             price: e.querySelector('.product__item__price').textContent,
             id: e.querySelector('.add').getAttribute('data-id'),
-            count: 1
+            count: 1,
+            total:0
         }
 
-        let total = 0;
-        //total = total + e.price;
+        e.total = e.total + parseFloat(infoCake.price.slice(1));
 
-        console.log(total, parseInt(infoCake.price));
+        //cartPrice.innerHTML= `$${e.total}`;
 
         const exist = shoppingCart.some( e => e.id=== infoCake.id);
 
@@ -111,7 +111,7 @@ let shoppingCart = [];
                     <a href="#" class="eraseCupcake" data-id="${id}"> X </a>
                 </td>
             `;
-            cartPrice.innerHTML= `${price}`;
+            //cartPrice.innerHTML= `${price}`;
 
             tBody.appendChild(row);
         });
@@ -121,6 +121,6 @@ let shoppingCart = [];
         while(tBody.firstChild){
             tBody.removeChild(tBody.firstChild);
         }
-        cartPrice.innerHTML= `$0.00`;
+        //cartPrice.innerHTML= `$0.00`;
     }
     

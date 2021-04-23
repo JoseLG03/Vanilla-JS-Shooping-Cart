@@ -37,8 +37,10 @@ let shoppingCart = [];
     };
 
     function emptyCart(){
+
         shoppingCart = [];
-        cartHTML();
+        
+        cleanHTML();
     };
 
     function eraseCupcake(e){
@@ -48,18 +50,23 @@ let shoppingCart = [];
 
             shoppingCart = shoppingCart.filter( e => e.id !== idCupcake);
 
-            cleanHTML();
+            cartHTML();
         }
     }
 
     function readInfoCake(e){
-        let infoCake ={
+        let infoCake = {
             img: e.querySelector('div').getAttribute('data-setbg'),
             name: e.querySelector('.product__item__text h6 a').textContent,
             price: e.querySelector('.product__item__price').textContent,
             id: e.querySelector('.add').getAttribute('data-id'),
             count: 1
         }
+
+        let total = 0;
+        //total = total + e.price;
+
+        console.log(total, parseInt(infoCake.price));
 
         const exist = shoppingCart.some( e => e.id=== infoCake.id);
 
@@ -86,8 +93,7 @@ let shoppingCart = [];
 
         shoppingCart.forEach(e => {
             const{img, name, price, count,id} =  e;
-            let row = document.createElement('tr');
-             
+            let row = document.createElement('tr'); 
             row.innerHTML=`
                 <td class=".shopping__cart__table table thead">
                     <img src="${img}" />
@@ -105,15 +111,16 @@ let shoppingCart = [];
                     <a href="#" class="eraseCupcake" data-id="${id}"> X </a>
                 </td>
             `;
-            
+            cartPrice.innerHTML= `${price}`;
+
             tBody.appendChild(row);
         });
-    
     }
 
     function cleanHTML(){
         while(tBody.firstChild){
             tBody.removeChild(tBody.firstChild);
         }
+        cartPrice.innerHTML= `$0.00`;
     }
     

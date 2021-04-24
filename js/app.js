@@ -66,7 +66,7 @@ let shoppingCart = [];
 
         e.total = e.total + parseFloat(infoCake.price.slice(1));
 
-        //cartPrice.innerHTML= `$${e.total}`;
+        cartPrice.innerHTML= `$${e.total}`;
 
         const exist = shoppingCart.some( e => e.id=== infoCake.id);
 
@@ -92,7 +92,7 @@ let shoppingCart = [];
         cleanHTML();
 
         shoppingCart.forEach(e => {
-            const{img, name, price, count,id} =  e;
+            let{img, name, price, count,id} =  e;
             let row = document.createElement('tr'); 
             row.innerHTML=`
                 <td class=".shopping__cart__table table thead">
@@ -111,16 +111,20 @@ let shoppingCart = [];
                     <a href="#" class="eraseCupcake" data-id="${id}"> X </a>
                 </td>
             `;
-            //cartPrice.innerHTML= `${price}`;
+            var totalArray = shoppingCart.map(totalCart);
+            cartPrice.innerHTML= `${totalArray}`;
 
             tBody.appendChild(row);
         });
     }
 
+    function totalCart(e){
+        return 
+    }
     function cleanHTML(){
         while(tBody.firstChild){
             tBody.removeChild(tBody.firstChild);
         }
-        //cartPrice.innerHTML= `$0.00`;
+        cartPrice.innerHTML= `$0.00`;
     }
     

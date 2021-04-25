@@ -27,6 +27,7 @@ let total = 0.00;
 
     loadEventsListeners();
 
+//functions    
     function addToCart(e){
 
         e.preventDefault();
@@ -65,8 +66,6 @@ let total = 0.00;
             count: 1,
             total:0
         }
-
-        //e.total = e.total + parseFloat(infoCake.price.slice(1));
 
         cartPrice.innerHTML= `$${e.price}`;
 
@@ -127,14 +126,29 @@ let total = 0.00;
         cartPrice.innerHTML= `$0.00`;
     }
     
-    function calcularTotal() {
+    function calcularTotal(e) {
 
         total = 0.00;
 
         shoppingCart.forEach((item) => {
-            total += parseFloat(item.price.slice(1));     
+            total += parseFloat(item.price.slice(1)) * item.count;     
             }
         );
 
+        /*
+        if(exist){
+            const cupcake = shoppingCart.map( e =>{
+                if(e.id=== infoCake.id){
+                    e.count++;
+                    return e;
+                }else{
+                    return e;
+                }
+            })
+            shoppingCart = [...cupcake];
+        }else{
+            shoppingCart = [...shoppingCart,infoCake];
+        }
+        */
         cartPrice.innerHTML= `$${total}`;
     }

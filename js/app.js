@@ -12,6 +12,8 @@ const btnEmptyCart = document.querySelector("#emptyCart");
 
 let shoppingCart = [];
 
+let total = 0.00;
+
 //Load listeners
 
     function loadEventsListeners(){
@@ -64,9 +66,9 @@ let shoppingCart = [];
             total:0
         }
 
-        e.total = e.total + parseFloat(infoCake.price.slice(1));
+        //e.total = e.total + parseFloat(infoCake.price.slice(1));
 
-        cartPrice.innerHTML= `$${e.total}`;
+        cartPrice.innerHTML= `$${e.price}`;
 
         const exist = shoppingCart.some( e => e.id=== infoCake.id);
 
@@ -111,16 +113,13 @@ let shoppingCart = [];
                     <a href="#" class="eraseCupcake" data-id="${id}"> X </a>
                 </td>
             `;
-            var totalArray = shoppingCart.map(totalCart);
-            cartPrice.innerHTML= `${totalArray}`;
+
+            calcularTotal(e);
 
             tBody.appendChild(row);
         });
     }
 
-    function totalCart(e){
-        return 
-    }
     function cleanHTML(){
         while(tBody.firstChild){
             tBody.removeChild(tBody.firstChild);
@@ -128,3 +127,14 @@ let shoppingCart = [];
         cartPrice.innerHTML= `$0.00`;
     }
     
+    function calcularTotal() {
+
+        total = 0.00;
+
+        shoppingCart.forEach((item) => {
+            total += parseFloat(item.price.slice(1));     
+            }
+        );
+
+        cartPrice.innerHTML= `$${total}`;
+    }

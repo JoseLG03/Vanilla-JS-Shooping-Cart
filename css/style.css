@@ -175,6 +175,11 @@ ol {
   padding: 14px 30px;
 }
 
+.site-btn:disabled,
+.site-btn[disabled]{
+  background: #444444;
+}
+
 /* Preloder */
 #preloder {
   position: fixed;
@@ -584,7 +589,8 @@ input[type="button"] {
   margin-top: 5px;
   cursor: pointer;
   box-sizing: border-box; }
-.button:hover,
+.button:hover:enabled,
+.button:active:enabled
 button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,

@@ -17,5 +17,5 @@ function eventListeners(){
 
 function startForm(){
     btnSend.disabled = true;
-    btnSend.classList.add("disabled");
+    //btnSend.classList.add("disabled");
 }

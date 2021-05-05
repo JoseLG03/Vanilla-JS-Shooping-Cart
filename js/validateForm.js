@@ -35,30 +35,18 @@ function validateForm(e){
         e.target.style.borderColor = "red";
         //e.target.placeholder= "This field may not be empty";
         if(e.target.id === "inputName"){
-            displayError(e.target.id);
+            displayError(e.target.parentElement.id);
         }else if(e.target.id === "inputEmail"){
-            displayErrorEmail();
+            displayError(e.target.parentElement.id);
         }else if(e.target.id === "inputMessage"){
-            displayErrorMessage();
+            displayError(e.target.parentElement.id);
         };
     }
 }
 
 function displayError(e){
-    console.log(e);
+    const divName = document.querySelector(`#${e}`);
     const msjError = document.createElement("p");
     msjError.textContent = "The field may not be empty.";
     divName.appendChild(msjError);
-}
-
-function displayErrorEmail(){
-    const msjError = document.createElement("p");
-    msjError.textContent = "The field may not be empty.";
-    divEmail.appendChild(msjError);
-}
-
-function displayErrorMessage(){
-    const msjError = document.createElement("p");
-    msjError.textContent = "The field may not be empty.";
-    divTextarea.appendChild(msjError);
 }

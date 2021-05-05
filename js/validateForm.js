@@ -8,6 +8,8 @@ const inputMessage = document.querySelector("#inputMessage");
 
 const btnSend = document.querySelector("#send");
 
+const divName = document.querySelector("#divName");
+
 //Event Listeners
 
 eventListeners();
@@ -15,6 +17,8 @@ eventListeners();
 function eventListeners(){
     document.addEventListener("DOMContentLoaded", startForm);
     inputName.addEventListener("blur", validateForm);
+    inputEmail.addEventListener("blur", validateForm);
+    inputMessage.addEventListener("blur", validateForm);
 }
 
 //functions
@@ -28,7 +32,33 @@ function validateForm(e){
     if(e.target.value.length > 0){
         console.log("Si hay algo");
     }else{
-        e.target.style.borderBottomColor = "red";
-        e.target.placeholder= "This field may not be empty";
+        e.target.style.borderColor = "red";
+        //e.target.placeholder= "This field may not be empty";
+        if(e.target.id === "inputName"){
+            displayError(e.target.id);
+        }else if(e.target.id === "inputEmail"){
+            displayErrorEmail();
+        }else if(e.target.id === "inputMessage"){
+            displayErrorMessage();
+        };
     }
+}
+
+function displayError(e){
+    console.log(e);
+    const msjError = document.createElement("p");
+    msjError.textContent = "The field may not be empty.";
+    divName.appendChild(msjError);
+}
+
+function displayErrorEmail(){
+    const msjError = document.createElement("p");
+    msjError.textContent = "The field may not be empty.";
+    divEmail.appendChild(msjError);
+}
+
+function displayErrorMessage(){
+    const msjError = document.createElement("p");
+    msjError.textContent = "The field may not be empty.";
+    divTextarea.appendChild(msjError);
 }

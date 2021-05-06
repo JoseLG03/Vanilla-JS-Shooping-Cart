@@ -32,6 +32,7 @@ function validateForm(e){
     if(e.target.value.length > 0){
         btnSend.disabled = false;
         e.target.style.borderColor = "#e1e1e1";
+        console.log(e.target.parentElement.id);
     }else{
         e.target.style.borderColor = "red";
         //e.target.placeholder= "This field may not be empty";
@@ -51,12 +52,12 @@ function displayError(e){
     const msjError = document.createElement("p");
     const classError = document.querySelectorAll(".error");
 
-    console.log(classError);
-
     msjError.classList.add("error");
     msjError.textContent = "This field may not be empty.";
     
-    if(classError.length === 0){
+    console.log(classError);
+
+    if(classError.length < 3){
         divName.appendChild(msjError);
     }
 }

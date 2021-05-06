@@ -30,23 +30,33 @@ function startForm(){
 
 function validateForm(e){
     if(e.target.value.length > 0){
-        console.log("Si hay algo");
+        btnSend.disabled = false;
+        e.target.style.borderColor = "#e1e1e1";
     }else{
         e.target.style.borderColor = "red";
         //e.target.placeholder= "This field may not be empty";
-        if(e.target.id === "inputName"){
-            displayError(e.target.parentElement.id);
-        }else if(e.target.id === "inputEmail"){
-            displayError(e.target.parentElement.id);
-        }else if(e.target.id === "inputMessage"){
-            displayError(e.target.parentElement.id);
-        };
+            if(e.target.id === "inputName"){
+                displayError(e.target.parentElement.id);
+            }else if(e.target.id === "inputEmail"){
+                displayError(e.target.parentElement.id);
+            }else if(e.target.id === "inputMessage"){
+                displayError(e.target.parentElement.id);
+            };
+        }
     }
-}
 
 function displayError(e){
+
     const divName = document.querySelector(`#${e}`);
     const msjError = document.createElement("p");
-    msjError.textContent = "The field may not be empty.";
-    divName.appendChild(msjError);
+    const classError = document.querySelectorAll(".error");
+
+    console.log(classError);
+
+    msjError.classList.add("error");
+    msjError.textContent = "This field may not be empty.";
+    
+    if(classError.length === 0){
+        divName.appendChild(msjError);
+    }
 }

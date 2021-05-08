@@ -53,7 +53,7 @@ function displayError(e){
     const classError = document.querySelectorAll(".error");
 
     msjError.classList.add("error");
-    msjError.textContent = "This field may not be empty.";
+    msjError.textContent = "This field may not be empty...";
     
     console.log(classError);
 

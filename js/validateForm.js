@@ -32,6 +32,8 @@ function validateForm(e){
     if(e.target.value.length > 0){
         btnSend.disabled = false;
         e.target.style.borderColor = "#e1e1e1";
+        const val = e.target.parentElement.lastChild;
+        console.log(val);
     }else{
             e.target.style.borderColor = "red";
             

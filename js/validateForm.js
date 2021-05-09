@@ -32,16 +32,21 @@ function validateForm(e){
     if(e.target.value.length > 0){
         btnSend.disabled = false;
         e.target.style.borderColor = "#e1e1e1";
-        console.log(e.target.parentElement.id);
     }else{
-        e.target.style.borderColor = "red";
-        //e.target.placeholder= "This field may not be empty";
+            e.target.style.borderColor = "red";
+            
             if(e.target.id === "inputName"){
+
                 displayError(e.target.parentElement.id);
+
             }else if(e.target.id === "inputEmail"){
+
                 displayError(e.target.parentElement.id);
+                
             }else if(e.target.id === "inputMessage"){
+
                 displayError(e.target.parentElement.id);
+
             };
         }
     }
@@ -53,9 +58,7 @@ function displayError(e){
     const classError = document.querySelectorAll(".error");
 
     msjError.classList.add("error");
-    msjError.textContent = "This field may not be empty...";
-    
-    console.log(classError);
+    msjError.textContent = "This field may not be empty";
 
     if(classError.length < 3){
         divName.appendChild(msjError);

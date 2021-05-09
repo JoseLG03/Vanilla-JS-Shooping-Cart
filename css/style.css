@@ -103,6 +103,10 @@ ol {
   margin: 0;
 }
 
+.error{
+  background: #ff0000;
+  color: white;
+}
 /*---------------------
   Helper CSS
 -----------------------*/
